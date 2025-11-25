@@ -61,7 +61,7 @@ const router = createBrowserRouter([
 	}
 ],
 	{
-		basename: '/Diplom',
+		basename: '/frontendDiplom',
 	}
 );
 
