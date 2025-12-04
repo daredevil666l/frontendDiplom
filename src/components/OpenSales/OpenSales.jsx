@@ -96,7 +96,6 @@ export function OpenSales() {
         {error ? <div className={styles.error}>{error}</div> : currentStatus === 1 ? <div className={styles.content}>Зал открыт</div> : <div className={styles.content}>Всё готово к открытию</div>}
         <div className={styles.buttons}>
             <Button appereance="admin" type="submit" disabled={loading}>{currentStatus === 1 ? 'Приостановить продажу билетов' : 'Открыть продажу билетов'}</Button>
-            <Button appereance="admin" type='button' onClick={() => navigate('/')}>выйти</Button>
         </div>
     </form>
 }

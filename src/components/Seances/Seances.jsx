@@ -10,6 +10,20 @@ export function Seances() {
     const { films, seances, halls } = useAppData();
     const { navigationData, setNavigationData } = useNavigation();
 
+    // Check if a seance has already passed
+    const isSeancePast = (seanceTime, filmDuration) => {
+        if (!navigationData.date) return false;
+
+        const [hours, minutes] = seanceTime.split(':').map(Number);
+        const seanceDate = new Date(navigationData.date);
+        seanceDate.setHours(hours, minutes, 0, 0);
+
+        // Add film duration to get end time
+        const seanceEndTime = new Date(seanceDate.getTime() + filmDuration * 60000);
+
+        return seanceEndTime < new Date();
+    };
+
     const seancesByFilm = seances.reduce((acc, seance) => {
         if (!acc[seance.seance_filmid]) {
             acc[seance.seance_filmid] = [];
@@ -73,16 +87,33 @@ export function Seances() {
                             <div className={styles.seances}>
                                 {hallSeances
                                     .sort((a, b) => a.seance_time.localeCompare(b.seance_time))
-                                    .map(seance => (
-                                        <NavLink to={navigationData.date
-                                            ? `/hallconfig?seanceId=${seance.id}&date=${navigationData.date}`
-                                            : '/'} key={seance.id}
-                                            className={styles['seance-time']}
-                                            onClick={() => handleHallClickSeance(seance, film)}
-                                        >
-                                            {seance.seance_time}
-                                        </NavLink>
-                                    ))
+                                    .map(seance => {
+                                        const isPast = isSeancePast(seance.seance_time, film.film_duration);
+
+                                        if (isPast) {
+                                            return (
+                                                <div
+                                                    key={seance.id}
+                                                    className={`${styles['seance-time']} ${styles['seance-time-disabled']}`}
+                                                >
+                                                    {seance.seance_time}
+                                                </div>
+                                            );
+                                        }
+
+                                        return (
+                                            <NavLink
+                                                to={navigationData.date
+                                                    ? `/hallconfig?seanceId=${seance.id}&date=${navigationData.date}`
+                                                    : '/'}
+                                                key={seance.id}
+                                                className={styles['seance-time']}
+                                                onClick={() => handleHallClickSeance(seance, film)}
+                                            >
+                                                {seance.seance_time}
+                                            </NavLink>
+                                        );
+                                    })
                                 }
                             </div>
                         </div>

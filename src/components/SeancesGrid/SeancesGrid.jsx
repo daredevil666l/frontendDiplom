@@ -85,8 +85,8 @@ export function SeancesGrid() {
         dispatch(fetchAllData());
     }
 
-    const handleSeanceDelete = (seanceId, film) => {
-        setSelectedSeance(seanceId);
+    const handleSeanceDelete = (seance, film) => {
+        setSelectedSeance(seance);
         setSelectedFilm(film);
         setShowDeleteSeancePopup(true);
     }

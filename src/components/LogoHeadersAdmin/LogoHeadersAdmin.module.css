@@ -1,3 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 .head {
     font-weight: var(--font-black);
     font-size: 34px;
@@ -20,5 +27,5 @@
     letter-spacing: 5px;
     vertical-align: middle;
     text-transform: uppercase;
-    color: var(--white);  
+    color: var(--white);
 }
