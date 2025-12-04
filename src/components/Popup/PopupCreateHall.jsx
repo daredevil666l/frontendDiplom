@@ -54,7 +54,7 @@ export function PopupCreateHall({ onClose, onSuccess }) {
     return <div className={styles.popup}>
         <div className={styles.head}>
             <Headling appearence="admin"> Добавление Зала</Headling>
-            <img src="../public/Admin/close-icon.svg" alt="иконка крестика" className={styles.icon} onClick={onClose || (() => navigate('/admin/cabinet'))} />
+            <img src={`${import.meta.env.BASE_URL}Admin/close-icon.svg`} alt="иконка крестика" className={styles.icon} onClick={onClose || (() => navigate('/admin/cabinet'))} />
         </div>
         <form className={styles.form} onSubmit={submit}>
             <div className={styles['input-block']}>

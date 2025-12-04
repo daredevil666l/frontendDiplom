@@ -57,7 +57,7 @@ export function PopupAddSeance({ onClose, onSuccessAddLocal, film, hall }) {
             <div className={styles.head}>
                 <Headling appearence="admin">Добавление сеанса</Headling>
                 <img
-                    src="../public/Admin/close-icon.svg"
+                    src={`${import.meta.env.BASE_URL}Admin/close-icon.svg`}
                     alt="иконка крестика"
                     className={styles.icon}
                     onClick={onClose || (() => navigate('/admin/cabinet'))}

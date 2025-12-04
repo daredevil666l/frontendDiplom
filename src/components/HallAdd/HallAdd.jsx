@@ -43,7 +43,7 @@ export function HallAdd() {
                 {halls.map((hall) => (
                     <div key={hall.id} className={styles.hall}>
                         <div >- {hall.hall_name}</div>
-                        <img src="../public/Admin/delete-icon.svg" alt="иконка удаления зала" className={styles.icon} onClick={() => delHall(hall.id)} />
+                        <img src={`${import.meta.env.BASE_URL}Admin/delete-icon.svg`} alt="иконка удаления зала" className={styles.icon} onClick={() => delHall(hall.id)} />
                     </div>
                 ))}
             </div>

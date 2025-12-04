@@ -24,7 +24,7 @@ export const DraggableFilm = ({ film, backgroundColor, onDelete }) => {
                 <div className={styles.duration}>{film.film_duration}&nbsp;минут</div>
             </div>
             <img
-                src="../public/Admin/delete-icon.svg"
+                src={`${import.meta.env.BASE_URL}Admin/delete-icon.svg`}
                 alt="иконка удаления"
                 className={styles.icon}
                 onClick={() => onDelete(film.id)}

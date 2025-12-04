@@ -14,9 +14,9 @@ export function SectionAdmin({ children, title }) {
     return <>
         <div className={styles.container}>
             <div className={styles.head} onClick={toggleOpen}>
-                <img src="../public/Admin/circle-icon.svg" alt="иконка круга" className={styles.icon} />
+                <img src={`${import.meta.env.BASE_URL}Admin/circle-icon.svg`} alt="иконка круга" className={styles.icon} />
                 <Headling appearence='admin' className={styles.title} >{title}</Headling>
-                <img src="../public/Admin/check_mark-icon.svg" alt="кнопка открытия выпадающего окна" className={cn(styles['check-mark'],
+                <img src={`${import.meta.env.BASE_URL}Admin/check_mark-icon.svg`} alt="кнопка открытия выпадающего окна" className={cn(styles['check-mark'],
                     {
                         [styles['check-mark-rotate']]: isOpen
                     })} />

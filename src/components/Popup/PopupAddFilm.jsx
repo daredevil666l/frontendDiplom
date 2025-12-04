@@ -100,7 +100,7 @@ export function PopupAddFilm({ onClose, onSuccess }) {
     return <div className={styles.popup}>
         <div className={styles.head}>
             <Headling appearence="admin"> Добавление фильма</Headling>
-            <img src="../public/Admin/close-icon.svg" alt="иконка крестика" className={styles.icon} onClick={onClose || (() => navigate('/admin/cabinet'))} />
+            <img src={`${import.meta.env.BASE_URL}Admin/close-icon.svg`} alt="иконка крестика" className={styles.icon} onClick={onClose || (() => navigate('/admin/cabinet'))} />
         </div>
         <form className={styles.form} onSubmit={submit}>
             <div className={styles['input-block']}>
@@ -140,7 +140,7 @@ export function PopupAddFilm({ onClose, onSuccess }) {
             <div className={styles['preview-container']}>
                 <div className={styles.preview}>
                     <img src={previewUrl} alt="Предпросмотр постера" className={styles['preview-image']} />
-                    <img src="../../Admin/close-icon.svg" alt="иконка крестика" onClick={handleRemovePoster} className={styles['remove-icon']} />
+                    <img src={`${import.meta.env.BASE_URL}Admin/close-icon.svg`} alt="иконка крестика" onClick={handleRemovePoster} className={styles['remove-icon']} />
                 </div>
             </div>
         )}

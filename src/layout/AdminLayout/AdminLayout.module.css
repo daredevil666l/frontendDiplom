@@ -1,5 +1,5 @@
 .admin-layout {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../../../public/Admin/backgroun-image.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('/frontendDiplom/Admin/backgroun-image.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;

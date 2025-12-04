@@ -127,14 +127,14 @@ export function PriceConfig() {
                             <label htmlFor="priceStandart">Цена, рублей</label>
                             <Input id="priceStandart" onChange={handleChangeForm} name="priceStandart" value={formValue.priceStandart} />
                         </div>
-                        <div className={styles.chair}><span>&nbsp;за</span>&nbsp;<img src="../public/Admin/regular-chair-icon.svg" alt="иконка для обычных кресел" />&nbsp;<span>обычные кресла</span></div>
+                        <div className={styles.chair}><span>&nbsp;за</span>&nbsp;<img src={`${import.meta.env.BASE_URL}Admin/regular-chair-icon.svg`} alt="иконка для обычных кресел" />&nbsp;<span>обычные кресла</span></div>
                     </div>
                     <div className={styles.field}>
                         <div className={styles.input}>
                             <label htmlFor="priceVip">Цена, рублей</label>
                             <Input id="priceVip" name="priceVip" onChange={handleChangeForm} value={formValue.priceVip} />
                         </div>
-                        <div className={styles.chair}><span>&nbsp;за</span>&nbsp;<img src="../public/Admin/VIP-chair-icon.svg" alt="иконка для VIP кресел" />&nbsp;<span>VIP кресла</span></div>
+                        <div className={styles.chair}><span>&nbsp;за</span>&nbsp;<img src={`${import.meta.env.BASE_URL}Admin/VIP-chair-icon.svg`} alt="иконка для VIP кресел" />&nbsp;<span>VIP кресла</span></div>
                     </div>
                 </div>
             </div>
