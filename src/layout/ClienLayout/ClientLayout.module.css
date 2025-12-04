@@ -1,5 +1,5 @@
 .client-layout {
-    background-image: url('../../../public/Client/background-image_client.png');
+    background-image: url('../../assets/Client/background-image_client.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -13,19 +13,20 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
     max-width: 990px;
     width: 100%;
     margin: auto;
-    padding: 0 16px; /* Добавляем отступы по бокам */
+    padding: 0 16px;
+    /* Добавляем отступы по бокам */
     box-sizing: border-box;
 }
 
 .logo {
     display: flex;
     justify-content: space-between;
-    align-items: center; 
-    padding: 14px; 
+    align-items: center;
+    padding: 14px;
     gap: 16px;
     max-width: 990px;
     margin: auto;
@@ -37,7 +38,7 @@
     max-width: 100%;
 }
 
-@media (min-width: 391px) and (max-width: 767px) { 
+@media (min-width: 391px) and (max-width: 767px) {
     .main {
         margin: 0;
         padding: 0;
@@ -51,7 +52,7 @@
     }
 
     .client-layout {
-        background-size:cover;
+        background-size: cover;
         background-position: center;
-    } 
+    }
 }

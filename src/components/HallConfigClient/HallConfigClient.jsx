@@ -6,6 +6,7 @@ import styles from './HallConfigClient.module.css'
 import Button from "../Button/Button";
 import cn from 'classnames'
 import { useAppData } from "../../hooks/useAppData";
+import screenImage from '../../assets/Client/screen.png';
 
 
 // Компонент выбора мест (клиентская часть)
@@ -143,7 +144,7 @@ export function HallConfigClient() {
             </div>
 
             <div className={styles.hall}>
-                <img src="public\Client\screen.png" alt="картинка экрана" className={styles.screen} />
+                <img src={screenImage} alt="картинка экрана" className={styles.screen} />
                 {hallsLoading || !dataHall?.result ? (
                     <div className={styles.loading}>Загрузка схемы зала...</div>
                 ) : hallsError ? (
