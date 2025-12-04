@@ -6,6 +6,7 @@ import { fetchAllData } from '../../store/allDataSlice.slice';
 import { deleteHall } from "../../store/hallOperationsSlice.slice";
 import { PopupCreateHall } from '../Popup/PopupCreateHall';
 import { useAppData } from '../../hooks/useAppData';
+import deleteIcon from '../../assets/Admin/delete-icon.svg';
 
 // Компонент добавления зала
 // Отображает список залов и кнопку создания нового
@@ -43,7 +44,7 @@ export function HallAdd() {
                 {halls.map((hall) => (
                     <div key={hall.id} className={styles.hall}>
                         <div >- {hall.hall_name}</div>
-                        <img src={`${import.meta.env.BASE_URL}Admin/delete-icon.svg`} alt="иконка удаления зала" className={styles.icon} onClick={() => delHall(hall.id)} />
+                        <img src={deleteIcon} alt="иконка удаления зала" className={styles.icon} onClick={() => delHall(hall.id)} />
                     </div>
                 ))}
             </div>

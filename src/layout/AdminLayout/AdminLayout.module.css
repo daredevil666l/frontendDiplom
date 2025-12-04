@@ -1,5 +1,5 @@
 .admin-layout {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('/frontendDiplom/Admin/backgroun-image.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/Admin/backgroun-image.png');
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
@@ -29,7 +29,7 @@
     padding-bottom: 50px;
 }
 
-@media (min-width: 391px) and (max-width: 767px) { 
+@media (min-width: 391px) and (max-width: 767px) {
     .logo {
         padding: 14px
     }

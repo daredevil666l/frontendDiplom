@@ -1,5 +1,6 @@
 import { useDrop } from 'react-dnd';
 import styles from './DeleteSeance.module.css';
+import trashIcon from '../../../assets/Admin/trash-icon.svg';
 
 // Компонент корзины для удаления сеансов
 // Появляется при перетаскивании сеанса
@@ -24,7 +25,7 @@ export const DeleteSeance = ({ onSeanceDelete }) => {
             ref={drop}
             className={`${styles.trashBin} ${isOver ? styles['drag-over'] : ''}`}
         >
-            <img src={`${import.meta.env.BASE_URL}Admin/trash-icon.svg`} alt="икнока мусорки" className={styles.icon} />
+            <img src={trashIcon} alt="икнока мусорки" className={styles.icon} />
         </div>
     );
 };

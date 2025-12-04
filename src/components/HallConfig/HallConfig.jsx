@@ -6,6 +6,10 @@ import styles from './HallConfig.module.css';
 import cn from 'classnames';
 import { configHall } from '../../store/hallOperationsSlice.slice';
 import { useAppData } from '../../hooks/useAppData';
+import regularChair from '../../assets/Admin/regular-chair-icon.svg';
+import vipChair from '../../assets/Admin/VIP-chair-icon.svg';
+import disabledChair from '../../assets/Admin/disabled-chair-icon.svg';
+import xIcon from '../../assets/Admin/x-icon.svg';
 
 // Компонент конфигурации зала (админка)
 // Позволяет задавать размеры зала и типы мест
@@ -158,11 +162,11 @@ export function HallConfig() {
     const getSeatIcon = (seatType) => {
         switch (seatType) {
             case 'standart':
-                return `${import.meta.env.BASE_URL}Admin/regular-chair-icon.svg`;
+                return regularChair;
             case 'vip':
-                return `${import.meta.env.BASE_URL}Admin/VIP-chair-icon.svg`;
+                return vipChair;
             case 'disabled':
-                return `${import.meta.env.BASE_URL}Admin/disabled-chair-icon.svg`;
+                return disabledChair;
         }
     }
 
@@ -204,7 +208,7 @@ export function HallConfig() {
                         <label htmlFor="hall_rows">Рядов, шт</label>
                         <Input id="hall_rows" name="rows" onChange={handleChangeForm} value={formValue.rows} />
                     </div>
-                    <img src={`${import.meta.env.BASE_URL}Admin/x-icon.svg`} alt="иконка крестика" className={styles.icon} />
+                    <img src={xIcon} alt="иконка крестика" className={styles.icon} />
                     <div className={styles.field}>
                         <label htmlFor="hall_places">Мест, шт</label>
                         <Input id="hall_places" name="places" value={formValue.places} onChange={handleChangeForm} />
@@ -216,15 +220,15 @@ export function HallConfig() {
                 Теперь вы можете указать типы кресел на схеме зала:
                 <div className={styles.chairs}>
                     <div className={styles.chair}>
-                        <img src={`${import.meta.env.BASE_URL}Admin/regular-chair-icon.svg`} alt="иконка для обычных кресел" />
+                        <img src={regularChair} alt="иконка для обычных кресел" />
                         <div>&nbsp;— обычные кресла</div>
                     </div>
                     <div className={styles.chair}>
-                        <img src={`${import.meta.env.BASE_URL}Admin/VIP-chair-icon.svg`} alt="иконка для VIP кресел" />
+                        <img src={vipChair} alt="иконка для VIP кресел" />
                         <div>&nbsp;— VIP кресла</div>
                     </div>
                     <div className={styles.chair}>
-                        <img src={`${import.meta.env.BASE_URL}Admin/disabled-chair-icon.svg`} alt="иконка для заблокированных кресел" />
+                        <img src={disabledChair} alt="иконка для заблокированных кресел" />
                         <div>&nbsp;— заблокированные (нет кресла)</div>
                     </div>
                 </div>

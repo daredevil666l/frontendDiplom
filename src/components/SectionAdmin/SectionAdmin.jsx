@@ -2,6 +2,8 @@ import { useState } from "react";
 import Headling from "../../components/Headling/Headling";
 import styles from './SectionAdmin.module.css';
 import cn from 'classnames';
+import circleIcon from '../../assets/Admin/circle-icon.svg';
+import checkMarkIcon from '../../assets/Admin/check_mark-icon.svg';
 
 // Компонент секции в админке
 // Может сворачиваться и разворачиваться
@@ -14,9 +16,9 @@ export function SectionAdmin({ children, title }) {
     return <>
         <div className={styles.container}>
             <div className={styles.head} onClick={toggleOpen}>
-                <img src={`${import.meta.env.BASE_URL}Admin/circle-icon.svg`} alt="иконка круга" className={styles.icon} />
+                <img src={circleIcon} alt="иконка круга" className={styles.icon} />
                 <Headling appearence='admin' className={styles.title} >{title}</Headling>
-                <img src={`${import.meta.env.BASE_URL}Admin/check_mark-icon.svg`} alt="кнопка открытия выпадающего окна" className={cn(styles['check-mark'],
+                <img src={checkMarkIcon} alt="кнопка открытия выпадающего окна" className={cn(styles['check-mark'],
                     {
                         [styles['check-mark-rotate']]: isOpen
                     })} />
